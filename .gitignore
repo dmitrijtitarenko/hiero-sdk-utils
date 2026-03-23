@@ -15,6 +15,9 @@ dist/
 *.swp
 *.swo
 
+# Claude Code internal tooling
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db

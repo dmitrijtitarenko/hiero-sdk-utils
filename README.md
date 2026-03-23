@@ -1,5 +1,6 @@
 # hiero-sdk-utils
 
+[![CI](https://github.com/dmitrijtitarenko/hiero-sdk-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/dmitrijtitarenko/hiero-sdk-utils/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4%2B-blue.svg)](https://www.typescriptlang.org/)
