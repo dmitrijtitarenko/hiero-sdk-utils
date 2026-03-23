@@ -63,6 +63,11 @@ export type {
   TopicMessagesQueryParams,
   ContractInfo,
   ContractsQueryParams,
+  CustomFee,
+  FixedFee,
+  FractionalFee,
+  FractionalAmount,
+  RoyaltyFee,
   NftInfo,
   NftsQueryParams,
   BalanceEntry,
@@ -79,8 +84,3 @@ export type {
   TimestampFilter,
   PaginationLinks,
 } from './types/common.js';
-
-export { ENTITY_ID_PATTERN } from './types/common.js';
-
-// Pagination
-export { paginate } from './pagination/paginator.js';

@@ -40,7 +40,6 @@ jobs:
 
       - name: Integration tests
         run: npm run test:integration
-        continue-on-error: true  # Network may not be available in CI
 
       - name: Build
         run: npm run build

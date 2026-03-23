@@ -112,12 +112,42 @@ export interface TransactionsQueryParams extends BaseQueryParams, TimestampFilte
 
 // ─── Token Types ─────────────────────────────────────────────────────────────
 
-/** Custom fee for a token */
+/** Fixed fee charged for a token transfer */
+export interface FixedFee {
+  amount: number;
+  collector_account_id: string;
+  denominating_token_id: string | null;
+}
+
+/** Fractional amount used in fractional and royalty fees */
+export interface FractionalAmount {
+  numerator: number;
+  denominator: number;
+}
+
+/** Fractional fee charged as a fraction of the transfer amount */
+export interface FractionalFee {
+  amount: FractionalAmount;
+  collector_account_id: string;
+  denominating_token_id: string | null;
+  maximum: number | null;
+  minimum: number;
+  net_of_transfers: boolean;
+}
+
+/** Royalty fee charged on NFT transfers */
+export interface RoyaltyFee {
+  amount: FractionalAmount;
+  collector_account_id: string;
+  fallback_fee: FixedFee | null;
+}
+
+/** Custom fee schedule for a token */
 export interface CustomFee {
   created_timestamp: string;
-  fixed_fees: ReadonlyArray<Record<string, unknown>>;
-  fractional_fees: ReadonlyArray<Record<string, unknown>>;
-  royalty_fees: ReadonlyArray<Record<string, unknown>>;
+  fixed_fees: ReadonlyArray<FixedFee>;
+  fractional_fees: ReadonlyArray<FractionalFee>;
+  royalty_fees: ReadonlyArray<RoyaltyFee>;
 }
 
 /** Full token info as returned by GET /api/v1/tokens/{id} */
