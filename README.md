@@ -1,11 +1,20 @@
 # hiero-sdk-utils
 
 [![CI](https://github.com/dmitrijtitarenko/hiero-sdk-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/dmitrijtitarenko/hiero-sdk-utils/actions/workflows/ci.yml)
+[![hiero-sdk-utils on npm](https://img.shields.io/npm/v/hiero-sdk-utils.svg)](https://www.npmjs.com/package/hiero-sdk-utils)
+[![hiero-sdk-utils-react on npm](https://img.shields.io/npm/v/hiero-sdk-utils-react.svg)](https://www.npmjs.com/package/hiero-sdk-utils-react)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4%2B-blue.svg)](https://www.typescriptlang.org/)
 
 TypeScript utilities for the Hedera/Hiero Mirror Node — typed queries, auto-pagination, and developer helpers.
+
+## Packages
+
+| Package | Description |
+|---|---|
+| [`hiero-sdk-utils`](packages/core) | Core TypeScript client for the Hedera Mirror Node |
+| [`hiero-sdk-utils-react`](packages/react) | React hooks built on the core client |
 
 ## Features
 
