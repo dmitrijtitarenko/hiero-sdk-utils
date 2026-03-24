@@ -18,6 +18,12 @@ dist/
 # Claude Code internal tooling
 .claude/
 
+# Package build outputs
+packages/*/dist
+
+# Example app dependencies (not a workspace)
+examples/react-app/node_modules/
+
 # OS
 .DS_Store
 Thumbs.db
