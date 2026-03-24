@@ -1,6 +1,6 @@
 # hiero-sdk-utils
 
-[![CI](https://github.com/dmitrijtitarenko/hiero-sdk-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/dmitrijtitarenko/hiero-sdk-utils/actions/workflows/ci.yml)
+[![CI](https://github.com/Datadamus-LLC/hiero-sdk-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/Datadamus-LLC/hiero-sdk-utils/actions/workflows/ci.yml)
 [![hiero-sdk-utils on npm](https://img.shields.io/npm/v/hiero-sdk-utils.svg)](https://www.npmjs.com/package/hiero-sdk-utils)
 [![hiero-sdk-utils-react on npm](https://img.shields.io/npm/v/hiero-sdk-utils-react.svg)](https://www.npmjs.com/package/hiero-sdk-utils-react)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
