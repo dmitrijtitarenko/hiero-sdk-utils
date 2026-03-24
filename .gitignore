@@ -18,6 +18,9 @@ dist/
 # Claude Code internal tooling
 .claude/
 
+# Internal development docs (specs, plans)
+docs/superpowers/
+
 # Package build outputs
 packages/*/dist
 
