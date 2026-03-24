@@ -29,8 +29,16 @@ TypeScript utilities for the Hedera/Hiero Mirror Node — typed queries, auto-pa
 
 ## Installation
 
+**Core client:**
+
 ```bash
 npm install hiero-sdk-utils
+```
+
+**React hooks** (optional, requires React 18+):
+
+```bash
+npm install hiero-sdk-utils-react
 ```
 
 ## Quick Start
@@ -206,6 +214,59 @@ try {
   }
 }
 ```
+
+## React Hooks
+
+`hiero-sdk-utils-react` provides six hooks backed by `HieroProvider` context. Wrap your app once, then use any hook anywhere in the tree.
+
+```tsx
+import { HieroClient, Networks } from 'hiero-sdk-utils';
+import {
+  HieroProvider,
+  useAccount,
+  useAccountTransactions,
+  useToken,
+  useNFTs,
+  useTopicMessages,
+} from 'hiero-sdk-utils-react';
+
+const client = new HieroClient({ baseUrl: Networks.mainnet });
+
+function App() {
+  return (
+    <HieroProvider client={client}>
+      <AccountView />
+    </HieroProvider>
+  );
+}
+
+function AccountView() {
+  const { data, loading, error } = useAccount('0.0.1234');
+  const { data: txs } = useAccountTransactions('0.0.1234', { limit: 5 });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  return (
+    <div>
+      <p>Balance: {data?.balance.balance} tinybars</p>
+      <p>Transactions: {txs?.length ?? 0}</p>
+    </div>
+  );
+}
+```
+
+All hooks return `{ data, loading, error, refetch }`. Pass `null` as the ID to skip the fetch.
+
+| Hook | Fetches |
+|---|---|
+| `useAccount(id)` | Single account info |
+| `useTransaction(id)` | Single transaction |
+| `useToken(id)` | Single token info |
+| `useNFTs(tokenId, params?)` | First page of NFTs for a token |
+| `useAccountTransactions(accountId, params?)` | Recent transactions for an account |
+| `useTopicMessages(topicId, params?)` | HCS messages for a topic |
+
+See the [React package README](packages/react) and the [demo app](examples/react-app) for more.
 
 ## Contributing
 

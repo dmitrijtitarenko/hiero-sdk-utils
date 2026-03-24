@@ -18,6 +18,11 @@ type NftsHookParams = Omit<NftsQueryParams, 'serialnumber'>;
  * @param params - Optional query parameters (excludes serialnumber)
  * @returns Query result with NftInfo array, loading state, and error
  *
+ * @remarks
+ * Only `params.limit` is tracked as a React dependency. Changes to other
+ * params (e.g. `order`) will not trigger a re-fetch. Call `refetch()` or
+ * pass a new `tokenId` to force a fresh request with updated params.
+ *
  * @example
  * ```tsx
  * const { data: nfts } = useNFTs('0.0.5678', { limit: 10 });

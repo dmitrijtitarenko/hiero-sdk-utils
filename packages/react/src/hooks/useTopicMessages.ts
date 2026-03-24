@@ -12,6 +12,11 @@ import { useHieroClient } from '../HieroProvider.js';
  * @param params - Optional query parameters for filtering
  * @returns Query result with TopicMessage array, loading state, and error
  *
+ * @remarks
+ * Only `params.limit` is tracked as a React dependency. Changes to other
+ * params will not trigger a re-fetch. Call `refetch()` to force a fresh
+ * request with the current params.
+ *
  * @example
  * ```tsx
  * const { data: messages } = useTopicMessages('0.0.7777', { limit: 20 });
